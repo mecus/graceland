@@ -3,6 +3,10 @@
     <span matRipple class="brand">
       <a href="#">Graceland</a>
     </span>
+    <!-- <span class="space-bar"></span> -->
+    <span class="opHours">
+     <b>Hours</b> <mat-icon>timer</mat-icon> <p>Mon-Fri 08:00-18:00 Sat 10:00-16:00</p>
+    </span>
     <span class="space-bar"></span>
     <span matRipple class="menu-item">
       <a href="#about">About</a>
@@ -11,16 +15,65 @@
       <a href="#practice">Practice</a>
     </span>
     <span matRipple class="menu-item">
-      <a href="#contact">Contact</a>
+      <a href="#get-in-touch">Contact</a>
     </span>
   </mat-toolbar>
 </div>
+<!-- Mobile Navigation -->
+<div class="mobile-menu-container sticky-header">
+    <mat-toolbar class="container">
+      <span matRipple class="brand">
+        <a href="#">
+          <b>Graceland</b>
+          <small>solicitors</small>
+        </a>
+      </span>
+      <!-- <span class="space-bar"></span> -->
+      <!-- <span class="opHours">
+       <b>Hours</b> <mat-icon>timer</mat-icon> <p>Mon-Fri 08:00-18:00 Sat 10:00-16:00</p>
+      </span> -->
+      <span class="space-bar"></span>
+      <!-- <span matRipple class="menu-item">
+        <a href="#about">A</a>
+      </span>
+      <span matRipple class="menu-item">
+        <a href="#practice">P</a>
+      </span>
+      <span matRipple class="menu-item">
+        <a href="#get-in-touch">C</a>
+      </span> -->
+      <span matRipple class="menu-item">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </span>
+      
+    </mat-toolbar>
+  </div>
+
+  <mat-menu #menu="matMenu">
+    <a href="#about" mat-menu-item>
+      <mat-icon>business</mat-icon>
+      <span>About</span>
+    </a>
+    <a href="#practice" mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Practice</span>
+    </a>
+    <a href="#get-in-touch" mat-menu-item>
+      <mat-icon>contacts</mat-icon>
+      <span>Contact</span>
+    </a>
+  </mat-menu>
 <router-outlet></router-outlet>
 
 <div class="footer-section">
     <div class="footer container">
-      <p>&copy; Copyright 2019. Allrights reserved. Graceland Solicitors Ltd </p>
+      <h1>Graceland Solicitors Ltd</h1>
+      <p>&copy; Copyright 2019 Allrights reserved </p>
       <p>T/A Graceland Solicitors | Company Number 9516021</p>
+      <p>Authorised & Regulated by SRA.</p>
+      <p>SRA Reg 448369 & 473623</p>
       <a matTooltip="Call the Developer on 07853292983" href="https://miscotech.co.uk" target="blank">Powered by MISCOTECH</a>
     </div>
 </div>

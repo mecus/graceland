@@ -1,0 +1,28 @@
+$font-stack: 'Raleway', 'Roboto', Helvetica, sans-serif;
+$primary-color: #333;
+$header-height: 650px;
+// $header-height: 500px;
+
+// @media only screen and (max-width: 600px) {...} 
+// slide-header{
+//     height: 600px;
+// }
+/* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (max-width: 768px) {
+//     $header-height: 500px;
+// } 
+
+// /* Medium devices (landscape tablets, 768px and up) */
+// @media only screen and (min-width: 768px) {
+//     $header-height: 600px;
+// } 
+
+// /* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {
+//     $header-height: 600px;
+// } 
+
+// /* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (min-width: 1400px) {
+//     $header-height: 600px;
+// }

@@ -1,0 +1,86 @@
+@import '../scss-var/custom-props';
+@keyframes bodyIn{
+    from{opacity: 0}
+    to{opacity: 1}
+}
+.terms-condition{
+    @import '../scss-var/terms';
+
+    .terms-body{
+        width: 65%;
+        font-family: 'Roboto', $font-stack;
+        color: darken(lightslategrey, 20);
+        font-weight: 100;
+        ol{
+            padding-left: 20px;
+        }
+        ol > li{
+           padding: 20px 0px;
+           line-height: 30px;
+           h1{
+               font-size: 1.2em;
+               text-transform: uppercase;
+               padding-left: 20px;
+               color: lightslategray;
+           }
+
+           ol > li{
+               padding: 5px 0px;
+            //    font-size: 1.2em;
+               padding-left: 20px;
+               line-height: 20px;
+               ul li{
+                   padding-left: 10px;
+                   padding-top: 10px;
+                   list-style-type: circle;
+               }
+           }
+        }
+        .breadcromb{
+            padding: 20px 0px;
+            display: flex;
+            align-content: space-between;
+            .space-emt{
+                flex: 1 1 auto;
+            }
+            .links{
+                height: 40px;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                mat-icon{
+                    height: 40px;
+                    // width: 40px;
+                    line-height: 40px;
+                }
+                p{
+                    padding: 0;
+                    margin: 0;
+                    line-height: 40px;
+                    text-align: center;
+                }
+            }
+        }
+        animation: bodyIn 1.5s;
+        transition: 1.5s;
+    }
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1400px) {
+
+    .container{
+        width: 65%;
+        margin: 0 auto;
+    }
+    // @import 'media-query/large-desktop';
+    .home-container{
+        .header{
+            width: 100%;
+            height: 650px;
+            overflow: hidden;
+            // transition: 0.2s;
+        }
+    }
+}

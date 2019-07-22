@@ -1,14 +1,25 @@
 <div class="header-section">
-    <div style="background-image: url('assets/images/grace1.jpeg'); width: 100%;" class="header">
+    <div class="header">
+        <img class="headImage" src="assets/images/grace1.jpeg" alt="">
+            <!-- style="background-image: url('assets/images/grace1.jpeg'); width: 100%;" -->
         <div class="inner-header">
             <div class="jumbo-text">
-                <h1>Expert Lawyers</h1>
-                <h3>Practicing Law to the</h3>
-                <h3>Highest Standard</h3>
-                <button color="primary" mat-raised-button>Get In Touch</button>
+                <div class="text-wrapper">
+                    <div class="main-text">
+                        <h1>Affordable Legal Cost</h1>
+                        <h3>Practicing Law to the</h3>
+                        <h3>Highest Standard</h3>
+                    </div>
+                    <div class="main-text">
+                        <h1>{{headTitle}}</h1>
+                        <h3>Practicing Law to the</h3>
+                        <h3>Highest Standard</h3>
+                    </div>
+                </div>
+                <button color="primary" (click)="getIntouch()" mat-raised-button>Get In Touch</button>
             </div>
             <div class="float-image">
-                <img src="assets/images/grace2.jpeg" alt="">
+                <img src="assets/images/top-photo.jpg" alt="">
             </div>
         </div>
     </div>
@@ -20,11 +31,14 @@
 <section class="about-section container-fluid" id="about">
     <div class="about container">
         <div class="about-image">
-            <div class="box-shift"></div>
             <div class="image">
-                <img src="assets/images/grace-about.jpeg" alt="">
+                <img src="assets/images/theboss.jpg" alt="">
+                <div class="pname">
+                    <h1>Adolph Okoro LLB(Hons)</h1>
+                    <p>Principal</p>
+                </div>
             </div>
-            
+            <div class="box-shift"></div>
         </div>
         <div class="about-text">
             <h1>Welcome to Graceland</h1>
@@ -35,10 +49,17 @@
             <p>
                 Our passion for people is at the heart of everything we do. It’s the engine that keeps us ticking and inspires us to do our best. We’re not satisfied unless we’re making a real difference to people’s lives, and we’ll keep working hard to ensure we get the best outcome possible for our clients.
             </p>
-            <button color="primary" mat-raised-button (click)="readMore()">Read More</button>
+            <button color="primary" matTooltip="Click To See More" matTooltipPosition="above" mat-raised-button (click)="readMore()">Read More</button>
+            <div class="text-fade">
+                <p>
+                    We understand that we are part of key moments in your life, whether these are connected to a company acquisition or sale, a change in your relationships, a marriage or divorce, Immigration issues, your expansion into a new area, or the purchase of a new home.
+                </p>
+
+            </div>
         </div>
     </div>
 </section>
+
 <section id="practice" class="practice-section container-fluid">
     <div class="practice container">
         <div class="title">
@@ -70,6 +91,7 @@
                 </p>
             </div>
         </div>
+        <button (click)="getMoreServices()" class="mobile-only" color="accent" mat-raised-button>more services</button>
         <div class="lower-practice">
             <div class="other-practice-info">
                 <!-- <mat-icon>clear</mat-icon> -->
@@ -90,7 +112,7 @@
                     <p>accredited law firm, delivering a global service, we will fully represent your case in close partnership with you.</p>
                 </div>
                 <div class="service2">
-                    <img src="assets/icons/biz-medium.png" alt="">
+                    <img src="assets/images/jcp.jpg" alt="">
                     <h1>Benefit</h1>
                     <p>accredited law firm, delivering a global service, we will fully represent your case in close partnership with you.</p>
                     
@@ -98,13 +120,13 @@
             </div>
             <div class="other-service">
                 <div class="service1">
-                    <img src="assets/icons/driver.png" alt="">
+                    <img src="assets/images/Driving_Offences.jpg" alt="">
                     <h1>Traffic Offence</h1>
                     <p>accredited law firm, delivering a global service, we will fully represent your case in close partnership with you.</p>
                     
                 </div>
                 <div class="service2">
-                    <img src="assets/icons/chat.png" alt="">
+                    <img src="assets/images/employment.jpg" alt="">
                     <h1>Employment</h1>
                     <p>accredited law firm, delivering a global service, we will fully represent your case in close partnership with you.</p>
                     
@@ -114,17 +136,40 @@
     </div>
 </section>
 
-<section id="culture" class="our-culture-section container-fluid">
+<section id="our-culture" class="society-container container-fluid">
+    <div class="accreditation container">
+        <div class="logos">
+            <img src="assets/images/family-logo.GIF" alt="">
+        </div>
+        <div class="logos">
+            <img src="assets/images/lexcel-logo.png" alt="">
+        </div>
+        <div class="logos">
+            <img src="assets/images/cds.gif" alt="">
+        </div>
+        <div class="logos">
+            <img src="assets/images/ADOLPHOKORO.jpg" alt="">
+        </div>
+        <div class="logos">
+            <img src="assets/images/community-legal-service-logo-png-transparent.png" alt="">
+        </div>
+        <div class="logos">
+            <img src="assets/images/ukas-product.jpg" alt="">
+        </div>
+    </div>
+</section>
+
+<section  class="our-culture-section container-fluid">
     <div class="our-culture container">
         <div class="principal-image">
             <div class="image">
-                <img src="assets/icons/lynn-okoro.png" alt="">
+                <img src="assets/images/lynn-okoro.gif" alt="">
             </div>
             <div class="box-shift"></div>
             <div class="social-culture">
-                <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
-                <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
-                <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
+                <fa-icon (click)="socialMediaLinks('facebook')" [icon]="['fab', 'facebook']"></fa-icon>
+                <fa-icon (click)="socialMediaLinks('twitter')" [icon]="['fab', 'twitter']"></fa-icon>
+                <fa-icon (click)="socialMediaLinks('linkedin')" [icon]="['fab', 'linkedin']"></fa-icon>
             </div>
         </div>
         <div class="principal-comment">
@@ -135,12 +180,55 @@
             </p>
             <div class="principal-position">
                 <h3>Lynn Okoro</h3>
-                <h4>Principal</h4>
+                <h4>Secretary</h4>
             </div>
 
 
         </div>
     </div>
+</section>
+<section class="direction-section container-fluid" id="get-in-touch">
+        <mat-tab-group mat-align-tabs="center" animationDuration="1000ms" [selectedIndex]="selectedIndex">
+            <mat-tab label="Lewisham Office On Google Map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.127279347244!2d-0.0171022485017891!3d51.455819522194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876026c4b99b187%3A0x952030d81e4b1743!2sLewisham+High+St%2C+Lewisham%2C+London+SE13+6NL!5e0!3m2!1sen!2suk!4v1562588599500!5m2!1sen!2suk" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </mat-tab>
+            <mat-tab label="Woolwich Office On Google Map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.2145492135564!2d0.06735185149916983!3d51.49093021962809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a8ea656b1ae5%3A0xf43be9d897edde09!2sBeresford+St%2C+Thamesmead+West%2C+London+SE18+6AY!5e0!3m2!1sen!2suk!4v1562589476293!5m2!1sen!2suk" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </mat-tab>
+            <mat-tab label="Get In Touch With Us">
+                <div class="contact-form">
+                    <div class="contact-form-inner container">
+                        <h1>Get in touch</h1>
+                        <form [formGroup]="formModel" (ngSubmit)="sendContact(formModel.value)">
+                            <p class="form-field">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Name</mat-label>
+                                    <input formControlName="name" matInput placeholder="Please enter your name">
+                                    <mat-icon matSuffix>person</mat-icon>
+                                    <!-- <p *ngIf="name.errors">Name is required</p> -->
+                                    <!-- <mat-hint>Hint</mat-hint> -->
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input formControlName="email" type="email" matInput placeholder="Please enter your email">
+                                    <mat-icon matSuffix>email</mat-icon>
+                                    <!-- <mat-hint>Hint</mat-hint> -->
+                                </mat-form-field>
+                            </p>
+                            <p class="text-message">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Message</mat-label>
+                                    <textarea formControlName="message" matInput placeholder="Leave your message"></textarea>
+                                    <mat-icon matSuffix>message</mat-icon>
+                                </mat-form-field>
+                            </p>
+                            <button mat-stroked-button type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    
 </section>
 <section id="contact" class="contact-section container-fluid">
     <div class="contact container">
@@ -190,18 +278,18 @@
             <!-- <p>Email: admin@gracelandsolicitors.co.uk</p> -->
         </div>
         <div class="social-media">
-            <h1>Follow Us</h1>
+            <h1>Let's Connect</h1>
             <mat-divider></mat-divider>
             <div class="social">
-                <div class="facebook" matTooltip="Like us on facebook" matTooltipPosition="after">
+                <div (click)="socialMediaLinks('facebook')" class="facebook" matTooltip="Like us on facebook" matTooltipPosition="before">
                     <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
                     <h2>Facebook</h2>
                 </div>
-                <div class="twitter" matTooltip="Follow us on twitter" matTooltipPosition="right">
+                <div (click)="socialMediaLinks('twitter')" class="twitter" matTooltip="Follow us on twitter" matTooltipPosition="before">
                     <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
                     <h2>Twitter</h2>
                 </div>
-                <div class="linkedin" matTooltip="Connect with us on LinkedIn" matTooltipPosition="right">
+                <div (click)="socialMediaLinks('linkedin')" class="linkedin" matTooltip="Connect with us on LinkedIn" matTooltipPosition="before">
                     <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
                     <h2>LinkedIn</h2>
                 </div>
@@ -209,6 +297,17 @@
             </div>
             
         </div>
+        <div class="terms-privacy">
+            <h1>Links</h1>
+            <mat-divider></mat-divider>
+            <div class="links">
+                <a routerLink="terms_of_business">Terms and Condition</a>
+                <a routerLink="privacy">Privacy Statement</a>
+                <a href="">Cookie Policy</a>
+            </div>
+        </div>
     </div>
     <!-- <p><mat-icon>email</mat-icon> : admin@gracelandsolicitors.co.uk</p> -->
 </section>
+
+

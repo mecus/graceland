@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit(){
+    console.log(window.screen.width);
     window.addEventListener('scroll', (e)=>{
       let yPos = window.pageYOffset;
       let stickmenu: any = document.querySelector(".menu-container");

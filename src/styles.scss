@@ -54,7 +54,7 @@ h5 { font-size: 12px }
 h6 { font-size: 11px }
 
 ul{ padding: 0; margin: 0}
-ul li{text-decoration: none; list-style: none;}
+// ul li{text-decoration: none; list-style: none;}
 
 p { margin: 0px }
 
@@ -79,6 +79,8 @@ a:focus { outline: 0 }
 a { outline: 0 }
 
 p a, p a:visited { line-height: inherit }
+a b, a small {padding: 0; margin: 0}
+b, small{padding: 0; margin: 0}
 
 a:link { text-decoration: none; }
 /* a { color: #f15a23; } */

@@ -1,0 +1,56 @@
+@import '../scss-var/custom-props';
+@keyframes bodyIn{
+    from{ opacity: 0}
+    to{ opacity: 1}
+}
+.privacy{
+    @import '../scss-var/terms';
+    .privacy-body{
+        width: 65%;
+        font-family: 'Roboto', $font-stack;
+        color: darken(lightslategrey, 20);
+        font-weight: 100;
+        .content{
+            // padding-bottom: 40px;
+            p{
+                padding: 10px 0px;
+            }
+            ul{
+                padding-left: 30px;
+                p{
+                    margin-left: -30px;
+                }
+                li{
+                    padding: 5px 0px;
+                }
+            }
+        }
+        .breadcromb{
+            padding: 20px 0px;
+            display: flex;
+            align-content: space-between;
+            .space-emt{
+                flex: 1 1 auto;
+            }
+            .links{
+                height: 40px;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                mat-icon{
+                    height: 40px;
+                    // width: 40px;
+                    line-height: 40px;
+                }
+                p{
+                    padding: 0;
+                    margin: 0;
+                    line-height: 40px;
+                    text-align: center;
+                }
+            }
+        }
+        animation: bodyIn 1.5s;
+        transition: 1.5s;
+    }
+}
