@@ -7,13 +7,13 @@
                 <div class="text-wrapper">
                     <div class="main-text">
                         <h1>Affordable Legal Cost</h1>
-                        <h3>Practicing Law to the</h3>
-                        <h3>Highest Standard</h3>
+                        <h3>Putting Your interest in the fore</h3>
+                        <h3>Front of our business</h3>
                     </div>
                     <div class="main-text">
-                        <h1>{{headTitle}}</h1>
-                        <h3>Practicing Law to the</h3>
-                        <h3>Highest Standard</h3>
+                        <h1>Expert Legal representation</h1>
+                        <h3>Experience you can trust for your</h3>
+                        <h3>business and personal affairs</h3>
                     </div>
                 </div>
                 <button color="primary" (click)="getIntouch()" mat-raised-button>Get In Touch</button>
@@ -31,14 +31,14 @@
 <section class="about-section container-fluid" id="about">
     <div class="about container">
         <div class="about-image">
-            <div class="image">
-                <img src="assets/images/theboss.jpg" alt="">
+            <div [@ContainerRaduis]="imgState? 'in': 'out'" class="image">
+                <img [@transformImage]="imgState? 'in': 'out'" id="dirImg" src="assets/images/okoro.png" alt="">
                 <div class="pname">
                     <h1>Adolph Okoro LLB(Hons)</h1>
-                    <p>Principal</p>
+                    <p>Director</p>
                 </div>
             </div>
-            <div class="box-shift"></div>
+            <div [@bgColor]="imgState? 'in' : 'out'" class="box-shift"></div>
         </div>
         <div class="about-text">
             <h1>Welcome to Graceland</h1>
@@ -49,7 +49,10 @@
             <p>
                 Our passion for people is at the heart of everything we do. It’s the engine that keeps us ticking and inspires us to do our best. We’re not satisfied unless we’re making a real difference to people’s lives, and we’ll keep working hard to ensure we get the best outcome possible for our clients.
             </p>
-            <button color="primary" matTooltip="Click To See More" matTooltipPosition="above" mat-raised-button (click)="readMore()">Read More</button>
+            <div class="about-button">
+                <button color="primary" matTooltip="Click To See More" matTooltipPosition="above" mat-raised-button (click)="seeMore('culture')">Read More</button>
+                <button color="primary" matTooltip="Click To View Our Team" matTooltipPosition="above" mat-raised-button (click)="seeMore('team')">Meet Our Team</button>
+            </div>
             <div class="text-fade">
                 <p>
                     We understand that we are part of key moments in your life, whether these are connected to a company acquisition or sale, a change in your relationships, a marriage or divorce, Immigration issues, your expansion into a new area, or the purchase of a new home.
@@ -99,7 +102,7 @@
                 <h1>Area of Practice</h1>
                 <!-- <mat-divider></mat-divider> -->
                 <p>
-                    Our Immigration Solicitors are a team of award winning, specialist solicitors, highly experienced in all areas of immigration law. As a fully qualified and accredited law firm, delivering a global service, we will fully represent your case in close partnership with you.
+                    Graceland Solicitors is authorised and regulated by the Solicitors Regulation Authority, ensuring that we meet high standards and follow the correct professional principles and code of conduct.
                 </p>
                 <div style="background-image: url('assets/icons/law.png')" class="law-balance">
                     <h3>We Can Represent you</h3>
@@ -107,28 +110,36 @@
             </div>
             <div class="other-service">
                 <div class="service1">
-                    <img src="assets/icons/housing.png" alt="">
+                    <img src="assets/images/apartment.jpg" alt="">
                     <h1>Housing</h1>
-                    <p>accredited law firm, delivering a global service, we will fully represent your case in close partnership with you.</p>
+                    <p>
+                        Moving home is exciting, but it can be stressful. That's why at Graceland Solicitors we work hard to ensure that the legal side of your home move is smooth and stress-free.
+                    </p>
                 </div>
                 <div class="service2">
-                    <img src="assets/images/jcp.jpg" alt="">
+                    <img src="assets/images/job-center-service.png" alt="">
                     <h1>Benefit</h1>
-                    <p>accredited law firm, delivering a global service, we will fully represent your case in close partnership with you.</p>
+                    <p>
+                        Graceland Solicitors has a long and proud background of social justice, protecting and exercising the rights of the unemployed, the disabled, those on low incomes or those who can no longer work due to illness or injury.
+                    </p>
                     
                 </div>
             </div>
             <div class="other-service">
                 <div class="service1">
-                    <img src="assets/images/Driving_Offences.jpg" alt="">
+                    <img src="assets/images/driving-service.png" alt="">
                     <h1>Traffic Offence</h1>
-                    <p>accredited law firm, delivering a global service, we will fully represent your case in close partnership with you.</p>
+                    <p>
+                       Many people tend to represent themselves in their traffic legal matter. You may not know your rights and the legal language of the court system. If you are facing a substantial fine, increased insurance premiums, or the possibility of losing your driving privileges you should consider contacting an our lawyers for a consultation regarding your case.
+                    </p>
                     
                 </div>
                 <div class="service2">
-                    <img src="assets/images/employment.jpg" alt="">
+                    <img src="assets/images/employ-service.png" alt="">
                     <h1>Employment</h1>
-                    <p>accredited law firm, delivering a global service, we will fully represent your case in close partnership with you.</p>
+                    <p>
+                        Whether you’re having a few problems at work and want some advice, feel that you’ve been treated unfairly, are facing changes to your working conditions or are facing the end of your employment – we’re here for you.
+                    </p>
                     
                 </div>
             </div>
@@ -178,12 +189,68 @@
             <p>
                 We understand that we are part of key moments in your life, whether these are connected to a company acquisition or sale, a change in your relationships, a marriage or divorce, Immigration issues, your expansion into a new area, or the purchase of a new home.
             </p>
+            <button matTooltip="Click To View Our Team" matTooltipPosition="above" mat-stroked-button (click)="seeMore('team')">Meet Our Team</button>
             <div class="principal-position">
                 <h3>Lynn Okoro</h3>
-                <h4>Secretary</h4>
+                <h4>Director</h4>
             </div>
 
 
+        </div>
+    </div>
+</section>
+<section class="our-team container-fluid" id="our_team">
+    <div class="team container">
+        <h1 class="head">Meet Our Team</h1>
+        <div class="team-group">
+            <div class="group">
+                <div class="member">
+                    <img src="assets/images/kk.png" alt="">
+                    <div class="title">
+                        <h1>Kelechi Okoro</h1>
+                        <mat-divider></mat-divider>
+                        <p>Partner</p>
+                    </div>
+                </div>
+                <div class="empty-member"></div>
+                <div class="member">
+                    <img src="assets/images/godwill.png" alt="">
+                    <div class="title">
+                        <h1>Godwill</h1>
+                        <mat-divider></mat-divider>
+                        <p>Partner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="center-photo">
+                    <img src="assets/images/okoro.png" alt="">
+                    <div class="title">
+                        <h1>Adolph Okoro</h1>
+                        <mat-divider></mat-divider>
+                        <p>Director</p>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="member">
+                    <img src="assets/images/lynn-okoro.gif" alt="">
+                    <div class="title">
+                        <h1>Lynn Okoro</h1>
+                        <mat-divider></mat-divider>
+                        <p>Director</p>
+                    </div>
+                </div>
+                <div class="empty-member"></div>
+                <div class="member">
+                    <img src="assets/images/lloyd.png" alt="">
+                    <div class="title">
+                        <h1>Lloyd</h1>
+                        <mat-divider></mat-divider>
+                        <p>Partner</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -304,6 +371,12 @@
                 <a routerLink="terms_of_business">Terms and Condition</a>
                 <a routerLink="privacy">Privacy Statement</a>
                 <a href="">Cookie Policy</a>
+                <a target="blank" matTooltip="Download feedback form" matTooltipPosition="above" href="assets/images/graceland-Questionnaire.pdf">Feedback</a>
+            </div>
+            <div class="sra-badge">
+                <div style="position: relative;padding-bottom: 59.1%;height: auto;overflow: hidden;">
+                    <iframe frameborder="0" scrolling="no" allowTransparency="true" src="https://cdn.yoshki.com/iframe/55845r.html" style="border:0px; margin:0px; padding:0px; backgroundColor:transparent; top:0px; left:0px; width:100%; height:100%; position: absolute;"></iframe>
+                </div>
             </div>
         </div>
     </div>

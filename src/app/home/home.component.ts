@@ -1,8 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { db } from '../firebase-config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { trigger, transition, style, state, animate, stagger } from '@angular/animations';
+import { temporaryAllocator } from '@angular/compiler/src/render3/view/util';
 
 const baseEmail = "emeka@miscotech.co.uk";
 const url = "https://miscotech-mail-app.herokuapp.com/mail";
@@ -10,9 +13,48 @@ const url = "https://miscotech-mail-app.herokuapp.com/mail";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [
+    trigger('transformImage', [
+      state('in', style({
+        transform: 'scale(1.0)',
+        marginTop: '-60px'
+      })),
+      state('out', style({
+        transform: 'scale(1.1)',
+        marginTop: '0px'
+      })),
+      transition('in <=> out', [
+        animate('200ms ease-out')
+      ]),
+ 
+    ]),
+    trigger("ContainerRaduis", [
+      state('in', style({
+        borderRadius: '0 10% 0 10%'
+      })),
+      state('out', style({
+        borderRadius: '0% 0 0 0'
+      })),
+      // transition('in <=> out', [
+      //   animate('.5s')
+      // ]),
+      // transition('out => in', [
+      //   animate('.5s')
+      // ])
+    ]),
+    trigger("bgColor", [
+      state('in', style({
+        backgroundColor: '#c2185b' //'#c34a50'
+      })),
+      state('out', style({
+        backgroundColor: '#02527C'
+      }))
+    ])
+  ]
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  imgState: boolean = false;
   headTitle = ("Expert Lawyers");
   internal;
   formModel: FormGroup;
@@ -21,12 +63,26 @@ export class HomeComponent implements OnInit, OnDestroy {
   headTextInterval;
   counter = 0;
   constructor(private _router: Router, private _fb: FormBuilder,
-    private http: HttpClient) { 
+    private http: HttpClient, private _snackBar: MatSnackBar) { 
     this.formModel = _fb.group({
       name: ["", Validators.required],
       email: ["", Validators.required, Validators.email],
       message: [""]
     });
+  }
+
+  @HostListener('mousemove', ['event'])
+  mouseMovement(e: any){
+    let ypos = e.movementY;
+    let xpos = e.movementX;
+    let el: any = document.querySelector(".team");
+    if(xpos > 0){
+      el.style.transform = "rotate(2deg)";
+    }else if(xpos < 0){
+      el.style.transform = "rotate(-2deg)";
+    }else if(!xpos){
+      el.style.transform = "rotate(0deg)";
+    }
   }
   more: boolean = false;
   getMoreServices(){
@@ -41,17 +97,25 @@ export class HomeComponent implements OnInit, OnDestroy {
     
   }
   socialMediaLinks(social: String){
-    alert(social);
+    //  alert(social);
   }
   sendContact(msg){
-    console.log(this.formModel.valid);
-    console.log(msg);
-
-    this.sendMail(msg).then(res => {
-      db.collection('/contacts').add(msg)
-      .then(ref => console.log({emailres: res, dbres: ref}))
-      .catch(err => console.log(err));
-    }).catch(err => console.log(err));
+    // console.log(this.formModel.valid);
+    // console.log(msg);
+    db.collection('/contacts').add(msg)
+    .then(ref => {
+      this.formModel.reset();
+      this.selectedIndex = 0;
+      this._snackBar.open("Your message was successfully sent", "Sent", {
+        duration: 10000,
+      });
+    })
+    .catch(err => console.log(err));
+    // this.sendMail(msg).then(res => {
+    //   db.collection('/contacts').add(msg)
+    //   .then(ref => console.log({emailres: res, dbres: ref}))
+    //   .catch(err => console.log(err));
+    // }).catch(err => console.log(err));
 
   }
   getIntouch(){
@@ -60,9 +124,16 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.selectedIndex = 2;
     }, 2000);
   }
-  readMore(){
+  seeMore(action){
     //this._router.navigate(["/#culture"]);
-    window.location.replace('#our-culture');
+    if(action === "culture"){
+      window.location.replace('#our-culture');
+    }else if(action === "team"){
+      window.location.replace('#our_team');
+    }else{
+      return null;
+    }
+    
   }
   pointerDown(){
     window.location.replace('#about');
@@ -84,6 +155,17 @@ export class HomeComponent implements OnInit, OnDestroy {
     }, 1000);
 
     // this.headSlideInit();
+    let devise = window.screen.width;
+    if(devise > 1 && devise < 768){
+      // this.transformAboutImage(300);
+      return null;
+    }else if(devise > 768 && devise < 1300){
+      this.transformAboutImage(500);
+    }else if(devise > 1280 && devise < 2000){
+      this.transformAboutImage(600);
+    }else{
+      return null;
+    }
   }
   ngOnDestroy(){
     clearInterval(this.internal);
@@ -133,6 +215,17 @@ export class HomeComponent implements OnInit, OnDestroy {
         state = false;
       }
     }, 20000);
+  }
+
+  transformAboutImage(bound){
+    window.addEventListener('scroll', e => {
+      let yPos = window.scrollY;
+      if(yPos > bound){
+        this.imgState = true;
+      }else{
+        this.imgState = false;
+      }
+    });
   }
 
 }

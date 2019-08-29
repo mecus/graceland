@@ -13,8 +13,14 @@
               color: #ffffff;
               font-family: 'Raleway', 'Roboto', sans-serif;
               text-transform: uppercase;
-              font-size: 1.5em;
+              
               line-height: 60px;
+              b{
+                font-size: 1.4em;
+              }
+              small{
+                font-size: 0.6em;
+              }
             }
         }
         .opHours{
@@ -66,14 +72,13 @@
             padding: 0 10px;
             height: 60px;
             background-color: transparent;
-            a{
-                color: #ffffff;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 400;
-                font-size: 0.8em;
-                text-transform: uppercase;
-                line-height: 60px;
-            }
+            color: #ffffff;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            line-height: 60px;
+            
             &:hover{
                 background-color: lighten(#034060, 10);//#9E0113;
             }

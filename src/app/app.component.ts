@@ -8,6 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'graceland';
 
+  state = false;
+  showHours(){
+    let time: any = document.querySelector('.our-time');
+    if(this.state){
+      time.style.opacity = '0';
+      this.state = false;
+    }else{
+      time.style.opacity = '1';
+      this.state = true;
+    }
+
+  }
   goToto(){
     let scrollbehavior = 'scrollBehavior' in document.documentElement.style;
     let option = {

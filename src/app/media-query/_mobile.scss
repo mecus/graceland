@@ -4,8 +4,9 @@ p{
     font-family: 'Roboto', $font-stack;
 }
 .pointer-container{
+    display: none;
     position: absolute;
-    top: 40%;
+    top: 42%;
     margin: 0 auto;
     left: 50%;
     width: 100px;
@@ -80,7 +81,7 @@ p{
                 .text-wrapper{
                     overflow: hidden;
                     height: 200px;
-                    width: 300px;
+                    width: 100%;
                     // &:hover{
                     //     .main-text:nth-child(1){
                     //         margin-top: 0px;
@@ -105,7 +106,7 @@ p{
                             margin-bottom: 10px;
                         }
                         h3{
-                            font-size: 1.5em;
+                            font-size: 1.2em;
                             margin: 5px 0px;
                             color: #F5F5F5;
                         }
@@ -172,16 +173,18 @@ p{
                 width: 100%;
                 // height: 460px;
                 z-index: 10;
-                // border-radius: 10% 0 0 0;
-                transition: .2s;
+                border-radius: 0;
+                // transition: .2s;
                 overflow: hidden;
                 img{
                     position: relative;
                     width: 100%;
                     // height: 400px;
-                    transition: .2s;
-                    transition-timing-function: linear;
+                    // transition: .2s;
+                    // transition-timing-function: linear;
                     transform: scale(1.1);
+                    -webkit-filter: grayscale(70%);
+                    filter: grayscale(70%);
                 }
                 .pname{
                     position: relative;
@@ -224,7 +227,7 @@ p{
                 width: 400px;
                 background-color: lighten(#02527C, 5);
                 // border-radius: 0 0 10% 0;
-                transition: 0.2s;
+                // transition: 0.2s;
                 // margin-left: 100px;
                 // margin-right: -50px;
                 // z-index: 10;
@@ -244,6 +247,7 @@ p{
             p{
                 margin-bottom: 20px;
                 color: #034060;
+                text-align: center;
             }
             button{
                 display: none;
@@ -311,7 +315,7 @@ p{
             h1{
                 text-align: center;
                 font-family: $font-stack;
-                font-size: 2em;
+                font-size: 1.5em;
                 text-transform: uppercase;
                 line-height: 100px;
                 color: #034F81;
@@ -376,6 +380,8 @@ p{
             text-align: center;
             margin: 0 auto;
             margin-top: 10px;
+            background-color: #c2185b;
+            color: #F5F5F5;
         }
         .lower-practice{
             display: none;
@@ -405,7 +411,7 @@ p{
                 .law-balance{
                     height: 100%;
                     width: 100%;
-                    margin-top: -200px;
+                    margin-top: -180px;
                     background-repeat: no-repeat;
                     h3{
                         text-align: center;
@@ -506,6 +512,8 @@ p{
                     transition: .5s;
                     transition-timing-function: linear();
                     background-image: linear-gradient(-60deg, red, #02527C);
+                    -webkit-filter: grayscale(70%);
+                    filter: grayscale(70%);
                  }               
             }
             .box-shift{
@@ -554,16 +562,19 @@ p{
             text-align: center;
             h1,p,h3,h4{font-family: $font-stack, 'Roboto', sans-serif;color: #F5F5F5;}
             h1{
-                font-size: 2em;
+                font-size: 1.8em;
                 text-transform: uppercase;
                 line-height: 40px;
             }
+
             p{
                 font-display: 'Roboto', sans-serif;
                 line-height: 25px;
                 padding: 20px;
             }
-
+            button{
+                display: none;
+            }
             .principal-position{
                 display: none;
                 margin-top: 100px;
@@ -589,6 +600,9 @@ p{
 
         }
     }
+}
+.our-team{
+    display: none;
 }
 .direction-section {
     position: relative;
@@ -640,7 +654,7 @@ p{
             font-family: $font-stack;
         }
         form{
-            width: 100%;
+            width: 90%;
             margin: 0 auto;
             padding: 20px;
             mat-form-field mat-icon{
@@ -782,6 +796,15 @@ p{
                         color: lighten(#034586, 50)
                     }
                 }
+                a:nth-child(3){
+                    // display: none;
+                    text-decoration: line-through;
+                    opacity: 0.8;
+                }
+            }
+            .sra-badge{
+                max-width:275px;
+                max-height:163px;
             }
         }
         .social-media{

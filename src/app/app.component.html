@@ -1,22 +1,29 @@
 <div class="menu-container sticky-header">
   <mat-toolbar class="container">
     <span matRipple class="brand">
-      <a href="#">Graceland</a>
+      <!-- <a href="#">Graceland</a> -->
+      <a href="#">
+        <b>Graceland</b>
+        <small>solicitors</small>
+      </a>
     </span>
     <!-- <span class="space-bar"></span> -->
-    <span class="opHours">
-     <b>Hours</b> <mat-icon>timer</mat-icon> <p>Mon-Fri 08:00-18:00 Sat 10:00-16:00</p>
+    <span (click)="showHours()" class="opHours">
+     <b>Open</b> <mat-icon>timer</mat-icon> <p class="our-time">Mon-Fri 08:00-18:00 Sat 10:00-16:00</p>
     </span>
     <span class="space-bar"></span>
-    <span matRipple class="menu-item">
-      <a href="#about">About</a>
-    </span>
-    <span matRipple class="menu-item">
-      <a href="#practice">Practice</a>
-    </span>
-    <span matRipple class="menu-item">
-      <a href="#get-in-touch">Contact</a>
-    </span>
+    <a href="#about" matRipple class="menu-item">
+      About Us
+    </a>
+    <a href="#practice" matRipple class="menu-item">
+      Our Practice
+    </a>
+    <a href="#our-culture" matRipple class="menu-item">
+      Our Culture
+    </a>
+    <a href="#get-in-touch" matRipple class="menu-item">
+      Contact Us
+    </a>
   </mat-toolbar>
 </div>
 <!-- Mobile Navigation -->
@@ -54,15 +61,19 @@
   <mat-menu #menu="matMenu">
     <a href="#about" mat-menu-item>
       <mat-icon>business</mat-icon>
-      <span>About</span>
+      <span>About Us</span>
     </a>
     <a href="#practice" mat-menu-item>
       <mat-icon>settings</mat-icon>
-      <span>Practice</span>
+      <span>Our Practice</span>
+    </a>
+    <a href="#our-culture" mat-menu-item>
+      <mat-icon>timeline</mat-icon>
+      <span>Our Culture</span>
     </a>
     <a href="#get-in-touch" mat-menu-item>
       <mat-icon>contacts</mat-icon>
-      <span>Contact</span>
+      <span>Contact Us</span>
     </a>
   </mat-menu>
 <router-outlet></router-outlet>
@@ -73,7 +84,7 @@
       <p>&copy; Copyright 2019 Allrights reserved </p>
       <p>T/A Graceland Solicitors | Company Number 9516021</p>
       <p>Authorised & Regulated by SRA.</p>
-      <p>SRA Reg 448369 & 473623</p>
+      <p>SRA Reg 626100 & 627120</p>
       <a matTooltip="Call the Developer on 07853292983" href="https://miscotech.co.uk" target="blank">Powered by MISCOTECH</a>
     </div>
 </div>

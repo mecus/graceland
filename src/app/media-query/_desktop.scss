@@ -1,8 +1,9 @@
 
 
 .pointer-container{
+    display: block;
     position: absolute;
-    top: 65%;
+    top: 55%;
     margin: 0 auto;
     left: 50%;
     width: 100px;
@@ -53,9 +54,9 @@
             .float-image{
                 position: relative;
                 top: 0;
-                height: 450px;
-                margin-top: -120px;
-                margin-right: -150px;
+                height: 500px;
+                margin-top: -100px;
+                margin-right: -100px;
                 border: 10px solid #ffffff;
                 border-radius: 1% 20% 20% 40%;
                 transform: rotate(-10deg);
@@ -121,7 +122,7 @@
 }
 
 .about-section{
-    height: 650px;
+    height: 550px;
     padding-top: 80px;
     background-color: #F5F5F5;//#CECECE;
     // background-color: #DFDBE5;
@@ -171,21 +172,23 @@
                 z-index: 10;
                 // background-color: red;
                 border-radius: 10% 0 0 0;
-                transition: .2s;
+                // transition: .2s;
                 overflow: hidden;
                 img{
                     position: relative;
                     width: 100%;
                     // width: 400px;
                     height: 460px;
-                    transition: .2s;
-                    transition-timing-function: linear;
+                    // transition: .2s;
+                    // transition-timing-function: linear;
                     transform: scale(1.1);
                 }
                 .pname{
-                    height: 60px;
+                    height: 80px;
                     // background-color: #1d9deb;
                     margin: 0;
+                    padding: 10px;
+                    margin-top: -8px
                     h1, p{
                         margin: 0;
                         padding: 0;
@@ -210,7 +213,7 @@
                 width: 400px;
                 background-color: lighten(#02527C, 5);
                 // border-radius: 0 0 10% 0;
-                transition: 0.2s;
+                // transition: 0.2s;
                 // margin-left: 100px;
                 // margin-right: -50px;
                 // z-index: 10;
@@ -560,6 +563,9 @@
         }
     }
 }
+// .our-team{
+//     display: block;
+// }
 .direction-section {
     height: 600px;
     background-color: #034586;

@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "graceland",
+    "public": "dist/graceland",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

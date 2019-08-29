@@ -1,6 +1,6 @@
 
 .pointer-container{
-
+    display: block;
     position: absolute;
     top: 35%;
     margin: 0 auto;
@@ -180,15 +180,15 @@
                 z-index: 10;
                 // background-color: red;
                 border-radius: 10% 0 0 0;
-                transition: .2s;
+                // transition: .2s;
                 overflow: hidden;
                 img{
                     position: relative;
                     width: 100%;
                     // width: 400px;
                     height: 460px;
-                    transition: .2s;
-                    transition-timing-function: linear;
+                    // transition: .2s;
+                    // transition-timing-function: linear;
                     transform: scale(1.1);
                 }
                 .pname{
@@ -219,7 +219,7 @@
                 width: 400px;
                 background-color: lighten(#02527C, 5);
                 // border-radius: 0 0 10% 0;
-                transition: 0.2s;
+                // transition: 0.2s;
                 // margin-left: 100px;
                 // margin-right: -50px;
                 // z-index: 10;
