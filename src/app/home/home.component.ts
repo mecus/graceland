@@ -102,15 +102,19 @@ export class HomeComponent implements OnInit, OnDestroy {
   sendContact(msg){
     // console.log(this.formModel.valid);
     // console.log(msg);
-    db.collection('/contacts').add(msg)
-    .then(ref => {
-      this.formModel.reset();
-      this.selectedIndex = 0;
-      this._snackBar.open("Your message was successfully sent", "Sent", {
-        duration: 10000,
-      });
-    })
-    .catch(err => console.log(err));
+    if(msg.name && msg.email){
+      db.collection('/contacts').add(msg)
+      .then(ref => {
+        this.formModel.reset();
+        
+        this._snackBar.open("Your message was successfully sent", "Sent", {
+          duration: 10000,
+        });
+        this.selectedIndex = 0;
+      })
+      .catch(err => console.log(err));
+    }
+
     // this.sendMail(msg).then(res => {
     //   db.collection('/contacts').add(msg)
     //   .then(ref => console.log({emailres: res, dbres: ref}))
@@ -160,7 +164,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       // this.transformAboutImage(300);
       return null;
     }else if(devise > 768 && devise < 1300){
-      this.transformAboutImage(500);
+      this.transformAboutImage(450);
     }else if(devise > 1280 && devise < 2000){
       this.transformAboutImage(600);
     }else{

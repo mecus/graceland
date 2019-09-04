@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'graceland';
-
   state = false;
   showHours(){
     let time: any = document.querySelector('.our-time');

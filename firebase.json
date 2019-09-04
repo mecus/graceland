@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "graceland",
+    "site": "graceland-80eab",
     "public": "dist/graceland",
     "ignore": [
       "firebase.json",
