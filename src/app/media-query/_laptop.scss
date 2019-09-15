@@ -299,8 +299,8 @@
             text-align: center;
             img{
                 width: 150px;
-                opacity: 0.2;
-                filter: grayscale(100%);
+                // opacity: 0.2;
+                // filter: grayscale(100%);
             }
         }
     }
@@ -381,12 +381,18 @@
             display: none;
         }
         .lower-practice{
+            
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             padding-top: 200px;
+            -ms-flex-direction: row;
+            -webkit-flex-direction: row;
             flex-direction: row;
             .other-practice-info{
                 text-align: center;
                 padding-top: 40px;
+                flex: 1 1 auto;
                 fa-icon{
                     font-size: 60px;
                     width: 60px !important;

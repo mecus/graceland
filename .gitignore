@@ -4,10 +4,10 @@
 /dist
 /tmp
 /out-tsc
-/src/app/firebase-config.ts
 # Only exists if Bazel was run
 /bazel-out
-
+# Firebase config file
+/src/firebase-config.ts
 # dependencies
 /node_modules
 

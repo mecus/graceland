@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, HostListener, ViewChild } from '@angular/
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { db } from '../firebase-config';
+import { db } from '../../firebase-config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { trigger, transition, style, state, animate, stagger } from '@angular/animations';
 import { temporaryAllocator } from '@angular/compiler/src/render3/view/util';

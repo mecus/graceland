@@ -35,8 +35,9 @@
             <div [@ContainerRaduis]="imgState? 'in': 'out'" class="image">
                 <img [@transformImage]="imgState? 'in': 'out'" id="dirImg" src="assets/images/okoro.png" alt="">
                 <div class="pname">
-                    <h1>Adolph Okoro LLB(Hons)</h1>
-                    <p>Director</p>
+                    <h1>Adolph Okoro (<small>Director</small>) </h1>
+                    <p>BSc MSC PhD LLB (Hons) BL</p>
+                    <!-- <p>Director</p> -->
                 </div>
             </div>
             <div [@bgColor]="imgState? 'in' : 'out'" class="box-shift"></div>
@@ -49,6 +50,9 @@
             </p>
             <p>
                 Our passion for people is at the heart of everything we do. It’s the engine that keeps us ticking and inspires us to do our best. We’re not satisfied unless we’re making a real difference to people’s lives, and we’ll keep working hard to ensure we get the best outcome possible for our clients.
+            </p>
+            <p>
+                Graceland Solicitors has Legal Aid franchise in Crime, Family (care proceedings) and Housing matters.
             </p>
             <div class="about-button">
                 <button color="primary" matTooltip="Click To See More" matTooltipPosition="above" mat-raised-button (click)="seeMore('culture')">Read More</button>
@@ -65,6 +69,9 @@
 </section>
 
 <section id="practice" class="practice-section container-fluid">
+    <!-- <div class="legal-advise-container">
+        <h1>Legal Advise</h1>
+    </div> -->
     <div class="practice container">
         <div class="title">
             <h1>Area of Practice</h1>
@@ -81,7 +88,7 @@
             <div class="service">
                 <!-- <mat-icon>people</mat-icon> -->
                 <img src="assets/icons/family.png" alt="">
-                <h1>Family/Devorce</h1>
+                <h1>Family/Divorce</h1>
                 <p>
                     When a relationship breaks down, emotions can run high and disputes often spiral out of control. When you need to move forward, we’re here to help. We’re one of the UK’s biggest and most experienced family law teams, and can advise on issues affecting every kind of family – including divorce, matters involving children and wealth protection.
                 </p>
@@ -91,7 +98,8 @@
                 <img src="assets/icons/cuff.png" alt="">
                 <h1>Crime</h1>
                 <p>
-                    We are one of the top law firm that provides a premium service for senior professionals, high net worth individuals and their families.  We are adept at managing the press where necessary but we also act efficiently and discreetly on many cases that are kept entirely out of the public eye.
+                    We are one of the top law firm that provides a premium service for senior professionals, high net worth individuals and their families.  
+                    We assist clients and get fair results from Arrest, Police Station, and through the courts system.
                 </p>
             </div>
         </div>
@@ -228,7 +236,8 @@
                     <img src="assets/images/okoro.png" alt="">
                     <div class="title">
                         <h1>Adolph Okoro</h1>
-                        <mat-divider></mat-divider>
+                        <mat-divider></mat-divider> 
+                        <p>BSc MSC PhD LLB (Hons) BL</p>
                         <p>Director</p>
                     </div>
                 </div>
