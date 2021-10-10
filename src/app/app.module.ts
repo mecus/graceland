@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { TermsConditionComponent } from './terms-condition/terms-condition.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { ReadMoreComponent } from './components/read-more/read-more.component';
 
 const fa = [faLinkedin, faTwitter, faFacebook, faAffiliatetheme]
 library.add(...fa);
@@ -23,7 +24,8 @@ library.add(...fa);
     AppComponent,
     HomeComponent,
     TermsConditionComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    ReadMoreComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ library.add(...fa);
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ReadMoreComponent]
 })
 export class AppModule { }

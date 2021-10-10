@@ -1,0 +1,11 @@
+<div class="read-container">
+  <img *ngIf="data.top" [src]="data.img" alt="">
+  <div class="head">
+    <h1>{{data.title}}</h1>
+  </div>
+  <div class="text">
+    <p *ngFor="let p of data.text">
+      {{p}}
+    </p>
+  </div>
+</div>

@@ -36,7 +36,7 @@
                 padding-top: 20px;
                 color: lighten(#034060, 30);
             }
-        
+
         }
         img{
             width: 100%;
@@ -201,7 +201,7 @@
                         font-size: 1.5em;
                     }
                     p{
-                        
+
                     }
                 }
 
@@ -301,7 +301,7 @@
                 line-height: 100px;
                 color: #034F81;
                 opacity: 0.2;
-                
+
             }
             h1::before{
                 content: '--';
@@ -350,6 +350,10 @@
                         padding: 20px 40px;
                         color: #034F81;
                         line-height: 20px;
+                }
+                button{
+                  margin-bottom: 20px;
+                  color: #c2185b;
                 }
             }
             .service:nth-child(2){
@@ -404,7 +408,7 @@
                 margin: 0 10px;
                 height: 100%;
                 width: 300px;
-                
+
                 .service1{
                     margin-bottom: 30px;
                 }
@@ -440,7 +444,7 @@
                         padding: 10px;
                     }
                 }
-           
+
             }
             .other-service:nth-child(3){
                 margin-top: -80px;
@@ -466,7 +470,7 @@
                 top: 0;
                 right: 0;
                 height: 460px;
-                width: 500px;           
+                width: 500px;
                 overflow: hidden;
                 z-index: 10;
                 background-color: #02527C;
@@ -484,7 +488,7 @@
                     transition: .5s;
                     transition-timing-function: linear();
                     background-image: linear-gradient(-60deg, red, #02527C);
-                 }               
+                 }
             }
             .box-shift{
                 position: absolute;
@@ -495,7 +499,7 @@
                 height: 300px;
                 width: 300px;
                 z-index: 1;
-                margin-bottom: 4px; 
+                margin-bottom: 4px;
             }
             .social-culture{
                 position: absolute;
@@ -736,7 +740,7 @@
 
         }
         .woolwich{
-    
+
             // p{
             //     padding: 0px 10px;
             // }

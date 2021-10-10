@@ -77,8 +77,18 @@
             <h1>Area of Practice</h1>
         </div>
         <div class="top-practice">
+          <div class="service" *ngFor="let service of services$">
+            <img [src]="service.img" alt="">
+            <h1>{{service.title}}</h1>
+            <p>
+              {{service.text[0]}}
+            </p>
+            <button style=" text-decoration: underline;" mat-button (click)="readMoreDialog(service, true)">Read More</button>
+          </div>
+        </div>
+        <!-- <div class="top-practice">
             <div class="service">
-                <!-- <mat-icon>people</mat-icon> -->
+
                 <img src="assets/icons/immigration.png" alt="">
                 <h1>Immigration</h1>
                 <p>
@@ -87,27 +97,26 @@
                 <p>
                     Our fees: we operate on a agreed fixed fee basis and always keep our costs reasonable.
                 </p>
+                <button (click)="readMoreDialog({title: 'Immigration', text: 'Our fees: we operate on a agreed fixed fee basis and always keep our costs reasonable.'})" mat-button>Read More</button>
             </div>
             <div class="service">
-                <!-- <mat-icon>people</mat-icon> -->
+
                 <img src="assets/icons/family.png" alt="">
                 <h1>Family/Divorce</h1>
                 <p>
-                    Graceland Solicitors has a broad range of experience and handles all aspects of family law. Key specialisms include: representing the parents in Care proceedings, the victims of domestic violence and assisting clients with securing a financial settlement following the breakdown of a marriage. The team also handles matters such as divorce, Special Guardianship Orders, Child Abduction, Children custody/ contact /   Child  Arrangement Orders   and prohibited  steps  orders. 
+                    Graceland Solicitors has a broad range of experience and handles all aspects of family law. Key specialisms include: representing the parents in Care proceedings, the victims of domestic violence and assisting clients with securing a financial settlement following the breakdown of a marriage. The team also handles matters such as divorce, Special Guardianship Orders, Child Abduction, Children custody/ contact /   Child  Arrangement Orders   and prohibited  steps  orders.
                 </p>
-                <!-- <p>
-                    We also advise and represent at court parents who wish to oppose  and challenge  adoptions or  who wish  to  discharge care orders in relation to children who are currently in long term foster care. We have Legal Aid Franchise in Family matter. You may be eligible for Public Fund.
-                </p> -->
+
             </div>
             <div class="service">
-                <!-- <mat-icon>people</mat-icon> -->
+
                 <img src="assets/icons/cuff.png" alt="">
                 <h1>Crime</h1>
                 <p>
-                    Our crime team is available 24 hours a day, 365 days a year to represent clients at Police station, Magistrate Court, Crown Court, at appeal court, Confiscation / POCA Team and Extradition. Our dedicated defence criminal team is available to listen to you, treat you as an individual and offer honest and straightforward advice. 
+                    Our crime team is available 24 hours a day, 365 days a year to represent clients at Police station, Magistrate Court, Crown Court, at appeal court, Confiscation / POCA Team and Extradition. Our dedicated defence criminal team is available to listen to you, treat you as an individual and offer honest and straightforward advice.
                 </p>
             </div>
-        </div>
+        </div> -->
         <button (click)="getMoreServices()" class="mobile-only" color="accent" mat-raised-button>more services</button>
         <div class="lower-practice">
             <div class="other-practice-info">
@@ -121,53 +130,46 @@
                 <div style="background-image: url('assets/icons/law.png')" class="law-balance">
                     <h3>We Can Represent you</h3>
                 </div>
-            </div>
-            <div class="other-service">
-                <div class="service1">
-                    <img src="assets/images/apartment.jpg" alt="">
-                    <h1>Housing</h1>
-                    <p>
-                        Our housing department covers a wide range of housing matters, we advise and assist tenants and landlords, we deal with unlawful eviction and possession claims, homelessness appeals, disrepair, neighbourhood disputes against local authority, landlord & tenant matters and judicial reviews.
-                        We regularly represent clients in the courts ensuring our client receive the highest quality assistance throughout their case. We have Legal Aid Franchise in Housing matter. You may be eligible for Public Fund.
-                        
-                    </p>
-                </div>
-                <div class="service2">
-                    <img src="assets/images/job-center-service.png" alt="">
-                    <h1>Welfare</h1>
-                    <p>
-                        Our dedicated welfare solicitor’s team assist you with reviews, Appeals and dispute against incorrect decisions. 
-                        We are also able to provide professional advice and representation if you have been accused of benefit Fraud and overpayments.
-                        
-                    </p>
-                    
-                </div>
-            </div>
-            <div class="other-service">
-                <div class="service1">
-                    <img src="assets/images/driving-service.png" alt="">
-                    <h1>Traffic Offence</h1>
-                    <p>
-                        We have highly experienced road traffic solicitors to defend motoring prosecutions.
-                        If you have been involved in a motoring offence or have been served a Notice of Intended Prosecution , then get help and legal advice from our team of specialists.
-                        
-                    </p>
-                    <p>
-                        We operate on an agreed fixed fee basis and always keep our costs reasonable. You may also be eligible for Public Fund.
-                    </p>
-                    
-                </div>
-                <div class="service2">
-                    <img src="assets/images/employ-service.png" alt="">
-                    <h1>Employment</h1>
-                    <p>
-                        Our employment department has considerable expertise in professional Disciplinary Proceedings, Discrimination and Race, Sex and Equality Acts, Negotiating severance arrangements, compromise or settlement agreements, redundancy and unfair dismissal.
-                        Our fees: we operate a transparent fee structure and can offer a range of competitively priced funding to meet your specific requirements. Our arrangements ensure that you are made aware of our fees from the outset.
-                        Generally, we will provide you with a free initial telephone consultation to find out whether we can meet your needs and to discuss funding options available to you.
-                        The arrangements we offer are: fee agreement hourly rate retainer / Agreed fixed fee arrangement
 
+            </div>
+            <div class="other-service">
+                <div class="service1">
+                    <img [src]="otherServices[0].img" alt="">
+                    <h1>{{otherServices[0].title}}</h1>
+                    <p>
+                      {{otherServices[0].text[0]}}
                     </p>
-                    
+                    <p><button  mat-button (click)="readMoreDialog(otherServices[0])">More</button></p>
+                </div>
+                <div class="service2">
+                  <img [src]="otherServices[2].img" alt="">
+                  <h1>{{otherServices[2].title}}</h1>
+                  <p>
+                    {{otherServices[2].text[0]}}
+                  </p>
+                 <p> <button  mat-button (click)="readMoreDialog(otherServices[2])">More</button></p>
+                </div>
+            </div>
+            <div class="other-service">
+                <div class="service1">
+                  <img [src]="otherServices[3].img" alt="">
+                  <h1>{{otherServices[3].title}}</h1>
+                  <p>
+                    {{otherServices[3].text[0]}}
+                  </p>
+                  <p>
+                    {{otherServices[3].text[1]}}
+                  </p>
+                  <p> <button mat-button (click)="readMoreDialog(otherServices[3])">More</button></p>
+                </div>
+                <div class="service2">
+                  <img [src]="otherServices[1].img" alt="">
+                  <h1>{{otherServices[1].title}}</h1>
+                  <p>
+                    {{otherServices[1].text[0]}}
+                  </p>
+                  <p> <button mat-button (click)="readMoreDialog(otherServices[1])">More</button></p>
+
                 </div>
             </div>
         </div>
@@ -254,7 +256,7 @@
                     <img src="assets/images/okoro.png" alt="">
                     <div class="title">
                         <h1>Adolph Okoro</h1>
-                        <mat-divider></mat-divider> 
+                        <mat-divider></mat-divider>
                         <p>BSc MSC PhD LLB (Hons) BL</p>
                         <p>Director</p>
                     </div>
@@ -323,7 +325,7 @@
                 </div>
             </mat-tab>
         </mat-tab-group>
-    
+
 </section>
 <section id="contact" class="contact-section container-fluid">
     <div class="contact container">
@@ -341,13 +343,13 @@
                 <mat-icon>file_copy</mat-icon>
                 <h5>+44 20 8314 5771</h5>
             </div>
-            
+
             <h5>DX: 56605-Lewisham</h5>
             <div class="email">
-                <mat-icon>email</mat-icon> 
+                <mat-icon>email</mat-icon>
                 <p>admin@gracelandsolicitors.co.uk</p>
             </div>
-           
+
         </div>
         <div class="woolwich">
             <h1>Woolwich Office</h1>
@@ -390,7 +392,7 @@
                 </div>
 
             </div>
-            
+
         </div>
         <div class="terms-privacy">
             <h1>Links</h1>

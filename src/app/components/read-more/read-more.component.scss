@@ -1,0 +1,23 @@
+.read-container{
+  // background-color: orangered;
+ img{
+   width: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+ }
+  .head{
+    height: 50px;
+    h1{
+      color: #ffffff;
+      line-height: 50px;
+    }
+  }
+  .text{
+
+    min-height: 250px;
+    p{
+      padding: 5px 0px;
+    }
+  }
+}

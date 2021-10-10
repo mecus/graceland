@@ -5,7 +5,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { db } from '../../firebase-config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { trigger, transition, style, state, animate, stagger } from '@angular/animations';
-import { temporaryAllocator } from '@angular/compiler/src/render3/view/util';
+import { DialogService } from '../services';
 
 const baseEmail = "emeka@miscotech.co.uk";
 const url = "https://miscotech-mail-app.herokuapp.com/mail";
@@ -27,7 +27,7 @@ const url = "https://miscotech-mail-app.herokuapp.com/mail";
       transition('in <=> out', [
         animate('200ms ease-out')
       ]),
- 
+
     ]),
     trigger("ContainerRaduis", [
       state('in', style({
@@ -62,27 +62,34 @@ export class HomeComponent implements OnInit, OnDestroy {
   initIndex = -1;
   headTextInterval;
   counter = 0;
+  services$: any;
+  otherServices: any;
   constructor(private _router: Router, private _fb: FormBuilder,
-    private http: HttpClient, private _snackBar: MatSnackBar) { 
+    private http: HttpClient, private _snackBar: MatSnackBar,
+    public dialogService: DialogService) {
     this.formModel = _fb.group({
       name: ["", Validators.required],
       email: ["", Validators.required, Validators.email],
       message: [""]
     });
   }
+  readMoreDialog(text: any, top: boolean = false){
+    this.dialogService.readMore({...text, top: top});
+  }
 
   @HostListener('mousemove', ['event'])
   mouseMovement(e: any){
-    let ypos = e.movementY;
-    let xpos = e.movementX;
-    let el: any = document.querySelector(".team");
-    if(xpos > 0){
-      el.style.transform = "rotate(2deg)";
-    }else if(xpos < 0){
-      el.style.transform = "rotate(-2deg)";
-    }else if(!xpos){
-      el.style.transform = "rotate(0deg)";
-    }
+    // console.log(e)
+    // let ypos = e.movementY;
+    // let xpos = e.movementX;
+    // let el: any = document.querySelector(".team");
+    // if(xpos > 0){
+    //   el.style.transform = "rotate(2deg)";
+    // }else if(xpos < 0){
+    //   el.style.transform = "rotate(-2deg)";
+    // }else if(!xpos){
+    //   el.style.transform = "rotate(0deg)";
+    // }
   }
   more: boolean = false;
   getMoreServices(){
@@ -94,7 +101,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       moreS.style.display = 'flex';
       this.more = true;
     }
-    
+
   }
   socialMediaLinks(social: String){
     //  alert(social);
@@ -106,7 +113,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       db.collection('/contacts').add(msg)
       .then(ref => {
         this.formModel.reset();
-        
+
         this._snackBar.open("Your message was successfully sent", "Sent", {
           duration: 10000,
         });
@@ -137,7 +144,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }else{
       return null;
     }
-    
+
   }
   pointerDown(){
     window.location.replace('#about');
@@ -146,6 +153,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     clearInterval(this.internal);
   }
   ngOnInit() {
+    this.services$ = this.dialogService.getOurTopServices();
+    this.otherServices = this.dialogService.getOurServices();
+    console.log(this.services$)
     this.scrollEvent();
     this.headSlideInit();
     let pointer: any = document.querySelector("#pointer");
@@ -209,7 +219,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     let state = false;
     let textAry:any = document.querySelectorAll(".main-text")[0];
 
- 
+
     setInterval(() => {
       if (!state){
         textAry.style.marginTop = "-200px";
