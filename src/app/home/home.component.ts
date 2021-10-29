@@ -2,7 +2,8 @@ import { Component, OnInit, OnDestroy, HostListener, ViewChild } from '@angular/
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { db } from '../../firebase-config';
+import { firebase } from '../../firebase-config';
+import { getDatabase, ref, set } from "firebase/database";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { trigger, transition, style, state, animate, stagger } from '@angular/animations';
 import { DialogService } from '../services';
@@ -54,6 +55,7 @@ const url = "https://miscotech-mail-app.herokuapp.com/mail";
   ]
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  database = getDatabase(firebase);
   imgState: boolean = false;
   headTitle = ("Expert Lawyers");
   internal;
@@ -113,16 +115,19 @@ export class HomeComponent implements OnInit, OnDestroy {
     // console.log(this.formModel.valid);
     // console.log(msg);
     if(msg.name && msg.email){
-      db.collection('/contacts').add(msg)
-      .then(ref => {
-        this.formModel.reset();
+      set(ref(this.database, 'contacts/'+msg.name), {
+        ...msg
+      });
+      // database.collection('/contacts').add(msg)
+      // .then(ref => {
+      //   this.formModel.reset();
 
-        this._snackBar.open("Your message was successfully sent", "Sent", {
-          duration: 10000,
-        });
-        this.selectedIndex = 0;
-      })
-      .catch(err => console.log(err));
+      //   this._snackBar.open("Your message was successfully sent", "Sent", {
+      //     duration: 10000,
+      //   });
+      //   this.selectedIndex = 0;
+      // })
+      // .catch(err => console.log(err));
     }
 
     // this.sendMail(msg).then(res => {

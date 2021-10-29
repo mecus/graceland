@@ -6,14 +6,13 @@
 /out-tsc
 # Only exists if Bazel was run
 /bazel-out
-# Firebase config file
-/src/firebase-config.ts
+
 # dependencies
 /node_modules
 
 # profiling files
-chrome-profiler-events.json
-speed-measure-plugin.json
+chrome-profiler-events*.json
+speed-measure-plugin*.json
 
 # IDEs and editors
 /.idea

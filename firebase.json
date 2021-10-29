@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "graceland-80eab",
-    "public": "dist/graceland",
+    "public": "dist/gracelands",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -15,4 +15,3 @@
     ]
   }
 }
-// account used emeka@m****tech.co.uk

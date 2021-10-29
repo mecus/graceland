@@ -15,7 +15,8 @@ export class DialogService {
   readMore(data: any){
     this.readMoreDialogRef = this._dialog.open(ReadMoreComponent, {
       data: data,
-      disableClose: false
+      disableClose: false,
+      // hasBackdrop: false
     });
     this.readMoreDialogRef.afterClosed().subscribe(res => {
       console.log(res)
