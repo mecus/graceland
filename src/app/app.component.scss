@@ -1,7 +1,14 @@
 @import './scss-var/custom-props';
+:host{
+  overflow: hidden;
+}
+router-outlet{
+  overflow: hidden;
+}
 .menu-container{
     background: transparent;
     height: 60px;
+    // overflow: hidden;
     mat-toolbar.container{
         width: 95%;
         display: flex;
@@ -13,7 +20,7 @@
               color: #ffffff;
               font-family: 'Raleway', 'Roboto', sans-serif;
               text-transform: uppercase;
-              
+
               line-height: 60px;
               b{
                 font-size: 1.4em;
@@ -78,12 +85,12 @@
             font-size: 0.8em;
             text-transform: uppercase;
             line-height: 60px;
-            
+
             &:hover{
                 background-color: lighten(#034060, 10);//#9E0113;
             }
         }
-       
+
     }
 }
 .mobile-menu-container{
@@ -201,7 +208,7 @@
                 }
 
             }
-           
+
         }
     }
     .menu-container{

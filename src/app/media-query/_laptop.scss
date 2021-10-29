@@ -283,8 +283,9 @@
     }
 }
 .society-container{
-    height: 250px;
+    // height: 250px;
     background-color: #eff3fb; //#c2185b;
+    padding: 20px 0px;
     .accreditation{
         display: flex;
         flex-direction: row;
@@ -985,7 +986,8 @@
                     color: #c2185b;
                     margin: 10px 0px;
                     &:hover{
-                        color: lighten(#034586, 50)
+                        color: lighten(#034586, 50);
+                        cursor: pointer;
                     }
                 }
             }

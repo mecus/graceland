@@ -76,6 +76,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   readMoreDialog(text: any, top: boolean = false){
     this.dialogService.readMore({...text, top: top});
   }
+  downlodProcedure(){
+    window.open(`assets/images/COMPLAINT_PROCEDURE.docx`, 'blank');
+  }
 
   @HostListener('mousemove', ['event'])
   mouseMovement(e: any){
