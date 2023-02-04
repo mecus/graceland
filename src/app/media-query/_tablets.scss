@@ -206,7 +206,7 @@
                         font-size: 1.5em;
                     }
                     p{
-                        
+
                     }
                 }
 
@@ -306,7 +306,7 @@
                 line-height: 100px;
                 color: #034F81;
                 opacity: 0.2;
-                
+
             }
             h1::before{
                 content: '--';
@@ -330,7 +330,7 @@
             align-content: space-between;
             .service{
                 flex: 1;
-                height: 300px;
+                min-height: 300px;
                 // background-color: antiquewhite;
                 text-align: center;
                 img{
@@ -409,9 +409,19 @@
                 margin: 0 10px;
                 height: 100%;
                 width: 300px;
-                
+
                 .service1{
                     margin-bottom: 30px;
+                    h1{
+                      margin: 0;
+                    }
+                    h3{
+                      color: #ffffff;
+                      padding: 0;
+                      margin: 0;
+                      font-size: 1.2rem;
+                      padding-left: 10px;
+                    }
                 }
                 .service1, .service2{
                     background-color: #034F81;
@@ -445,7 +455,7 @@
                         padding: 10px;
                     }
                 }
-           
+
             }
             .other-service:nth-child(3){
                 margin-top: -80px;
@@ -471,7 +481,7 @@
                 top: 0;
                 right: 0;
                 height: 460px;
-                width: 500px;           
+                width: 500px;
                 overflow: hidden;
                 z-index: 10;
                 background-color: #02527C;
@@ -489,7 +499,7 @@
                     transition: .5s;
                     transition-timing-function: linear();
                     background-image: linear-gradient(-60deg, red, #02527C);
-                 }               
+                 }
             }
             .box-shift{
                 position: absolute;
@@ -500,7 +510,7 @@
                 height: 300px;
                 width: 300px;
                 z-index: 1;
-                margin-bottom: 4px; 
+                margin-bottom: 4px;
             }
             .social-culture{
                 position: absolute;
@@ -738,7 +748,7 @@
 
         }
         .woolwich{
-    
+
             // p{
             //     padding: 0px 10px;
             // }

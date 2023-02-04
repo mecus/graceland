@@ -136,6 +136,7 @@
                 <div class="service1">
                     <img [src]="otherServices[0].img" alt="">
                     <h1>{{otherServices[0].title}}</h1>
+                    <h3>{{otherServices[0].subtitle}}</h3>
                     <p>
                       {{otherServices[0].text[0]}}
                     </p>
@@ -401,10 +402,10 @@
             <mat-divider></mat-divider>
             <div class="links">
                 <a routerLink="terms_of_business">Terms and Condition</a>
-                <a matTooltip="Download Complaint Procedure" (click)="downlodProcedure()">Complaint Procedure</a>
+                <a matTooltip="Download Complaint Procedure" (click)="downlodProcedure('complaint')">Complaint Procedure</a>
                 <a routerLink="privacy">Privacy Statement</a>
-                <a href="">Cookie Policy</a>
-                <a target="blank" matTooltip="Download feedback form" matTooltipPosition="above" href="assets/images/graceland-Questionnaire.pdf">Feedback</a>
+                <!-- <a href="">Cookie Policy</a> -->
+                <a matTooltip="Download feedback form" (click)="downlodProcedure('feedback')" matTooltipPosition="above">Feedback</a>
             </div>
             <div class="sra-badge">
                 <div style="position: relative;padding-bottom: 59.1%;height: auto;overflow: hidden;">

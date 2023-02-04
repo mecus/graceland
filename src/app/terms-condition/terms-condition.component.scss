@@ -95,6 +95,9 @@ table{
 @media only screen and (min-width: 770px) {
 
     .terms-condition{
+      .terms-body{
+        width: 75%;
+      }
         .terms-header{
             height: 300px;
             background-color: darken(#034060, 2);
@@ -126,9 +129,15 @@ table{
         }
     }
     // @import 'media-query/large-desktop';
-    
-}
 
+}
+@media only screen and (min-width: 1600px) {
+  .terms-condition{
+    .terms-body{
+      width: 65%;
+    }
+  }
+}
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1400px) {
 

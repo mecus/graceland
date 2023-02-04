@@ -1,10 +1,13 @@
 .read-container{
   // background-color: orangered;
+  overflow: scroll;
+  height: 80vh;
  img{
    width: 60px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  color: #ffffff;
  }
   .head{
     height: 50px;
