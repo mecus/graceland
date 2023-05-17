@@ -39,9 +39,9 @@ const DATA = [
     "title": "Immigration",
     "img": "assets/icons/immigration.png",
     "text": [
-      "Graceland Solicitors has a broad range of experience and handles all aspects of family law. Key specialisms include: representing the parents in Care proceedings, the victims of domestic violence and assisting clients with securing a financial settlement following the breakdown of a marriage. The team also handles matters such as special guardianship order, Child/Children custody/ contact / arrangement order, and prohibited order. We have legal aid franchise in dealing with family matters. If you do not qualify for Legal Aid, our cost can be between £1,500 - £10,000 plus VAT.",
+      "We offer specialist advice in a wide range of Immigration Services to individuals and families wish to enter the UK, extend their stay and wish to settle in the UK. Our extensive experience in the UK Immigration law means that we can tailor our advice to the needs of any client looking to visit and/ or settle in the UK. Our fees: we operate on an agreed fixed fee basis and always keep our costs reasonable. The cost can be between £750-£3,500 plus VAT.",
       "Who will carry out the work?",
-      " Director assisted by solicitor; Solicitor/Director assisted by a paralegal; All work supervised overseen by either Supervisor of Family department or Director What services are included?",
+      " Director assisted by solicitor; Solicitor/Director assisted by a paralegal; All work supervised overseen by Director",
       "Initial attendance, assessing documents, advising on the matter, obtaining further evidence, engaging with other parties, preparing case, attending court, providing update and advising on outcome.",
       "The costs quoted here do not include:",
       "Any disbursement: this may include Application fee, court fee, and disbursement may attract VAT like: medical / expert / barristers’ fee.",
